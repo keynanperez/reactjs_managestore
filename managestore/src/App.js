@@ -6,9 +6,9 @@ import Customers from "./pages/Customers";
 import Purchases from "./pages/Purchases";
 import EditCustomer from "./pages/EditCustomer";
 import EditProduct from "./pages/EditProduct";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import utils from "./utils";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function App() {
 
