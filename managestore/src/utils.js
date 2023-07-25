@@ -34,6 +34,28 @@ const getCustomers = async () => {
     return customersArr;
 }
 
+const getPurchases = async () => {
+  let data = await firebase.firestore().collection("Purchases").get();
+  let purchasesArr = [];
+  data.forEach((pur) => {
+    console.log(pur.data())
+    const d = new Date("July 21, 1983 01:15:00");
+    console.log(d)
+    let purchase = {
+      id: pur.id,
+      customerID: pur.data().customerID,
+      ProductID: pur.data().ProductID,
+      Date: pur.data().Date,
+    };
+    purchasesArr.push(purchase);
+ 
+  });
+  return purchasesArr;
+}
 
 
-    export default {getProducts,getCustomers};
+
+
+
+
+  export default {getProducts,getCustomers,getPurchases};

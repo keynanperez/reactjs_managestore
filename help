@@ -1,0 +1,11 @@
+
+let finalUsers = users.map(user =>
+{
+    let obj = {};
+    obj.id = user.id;
+    let arr = user.name.split(" ”)
+    obj.fname = arr[0];
+    obj.lname = arr[1];
+    obj.age = 18;
+    return obj
+    )}
