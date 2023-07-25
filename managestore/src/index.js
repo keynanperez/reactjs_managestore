@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom';
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
-import appReducer from './redux/appReducer';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import appReducer from "./redux/appReducer";
 
-const appStore = createStore(appReducer)
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const appStore = createStore(appReducer);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Provider store={appStore}>
@@ -17,7 +17,6 @@ root.render(
     </Provider>
   </BrowserRouter>
 );
-
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

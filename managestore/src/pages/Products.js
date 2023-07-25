@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import ProductComp from "../components/ProductComp";
 
 //product page split the page to two areas
@@ -18,7 +18,7 @@ const Products = () => {
         <h1> List Of Products</h1>
         <br />
         <br />
-            {/* 
+        {/* 
         a table that gets all the products from the store 
         every component gets the data{product object} and key{product id}
         */}
