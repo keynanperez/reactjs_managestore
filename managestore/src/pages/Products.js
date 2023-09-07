@@ -17,7 +17,6 @@ const Products = () => {
       <div style={{ width: "50%", float: "right" }}>
         <h1> List Of Products</h1>
         <br />
-        <br />
         {/* 
         a table that gets all the products from the store 
         every component gets the data{product object} and key{product id}

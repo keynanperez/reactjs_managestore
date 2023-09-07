@@ -13,10 +13,10 @@ const CustomerComp = (props) => {
     console.log(product);
     return product[0].name;
   };
+
   const buyProduct = (e, id) => {
     e.preventDefault();
     const date = new Date();
-
     const [withoutTime] = date.toISOString().split("T");
     console.log(withoutTime);
     alert(withoutTime);
@@ -30,6 +30,7 @@ const CustomerComp = (props) => {
       dispatch({ type: "ADD_PURCHASE", payload: obj });
     }
   };
+  
   return (
     <>
       <tr key={props.data.id}>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 const EditProduct = () => {
   const params = useParams();
@@ -18,22 +17,18 @@ const EditProduct = () => {
     setProduct(storeData.products.find((prod) => prod.id === params.id));
   }, []);
 
-
   const updateProduct = (e) => {
     e.preventDefault();
-
     alert("Update!");
-
     dispatch({ type: "UPDATE_PRODUCT", payload: product });
   };
 
-  const deleteProduct = (e)=>{
+  const deleteProduct = (e) => {
     e.preventDefault();
     alert("Deleted!");
     dispatch({ type: "DELETE_PRODUCT", payload: product.id });
+  };
 
-
-  }
   return (
     <div>
       <h1> EditProduct</h1>
@@ -69,9 +64,7 @@ const EditProduct = () => {
         />
         <br />
         <input type="submit" value="Update" />{" "}
-        <input type="button"  value="Delete" onClick={e => deleteProduct(e)}/>
-{" "}
-
+        <input type="button" value="Delete" onClick={(e) => deleteProduct(e)} />{" "}
       </form>
     </div>
   );

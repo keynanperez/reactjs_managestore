@@ -11,7 +11,6 @@ import utils from "./utils";
 import { useEffect } from "react";
 
 function App() {
-
   const dispatch = useDispatch();
   useEffect(() => {
     const getData = async () => {
@@ -20,16 +19,9 @@ function App() {
       let customers = await utils.getCustomers();
       console.log(customers);
       let purchases = await utils.getPurchases();
-
       dispatch({ type: "LOAD_PRODUCTS", payload: { products: products } });
-      //alert("1")
       dispatch({ type: "LOAD_CUSTOMERS", payload: { customers: customers } });
       dispatch({ type: "LOAD_PURCHASE", payload: { purchases: purchases } });
-
-
-      console.log(purchases);
-
-      //alert("2")
     };
     getData();
   }, []);

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 const EditCustomer = () => {
   const params = useParams();
@@ -19,9 +18,7 @@ const EditCustomer = () => {
 
   const updateCustomer = (e) => {
     e.preventDefault();
-
     alert("Update!");
-
     dispatch({ type: "UPDATE_CUSTOMER", payload: customer });
   };
 
