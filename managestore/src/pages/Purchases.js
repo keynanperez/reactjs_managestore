@@ -1,6 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useState } from "react";
 
 const Purchases = () => {
@@ -15,13 +14,11 @@ const Purchases = () => {
     listarr = storeData.purchases.filter(
       (x) => x.date === purchdate.toISOString
     );
-    //console.log(listarr);
     //set the array on the list property
     if (product || customer) {
       if (product && customer) {
         let listarrproduct;
         listarrproduct = listarr.filter((i) => i.ProductID === product);
-
         let listarrcustomer;
         listarrcustomer = listarrproduct.filter(
           (m) => m.customerID === customer
@@ -37,14 +34,9 @@ const Purchases = () => {
           setListPurch(cust);
         }
       }
-      alert(product);
     } else {
       setListPurch(listarr);
     }
-    //split the date
-    const date = new Date();
-    const [withoutTime] = date.toISOString().split("T");
-    //console.log(withoutTime);
   };
 
   const getCustomerById = (id) => {

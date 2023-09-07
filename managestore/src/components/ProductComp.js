@@ -16,7 +16,7 @@ const ProductComp = (props) => {
     let customer = storeData.customers.filter((x) => x.id === id);
     return customer[0].firstName + " " + customer[0].lastName;
   };
-  
+
   return (
     <>
       <tr key={props.data.id}>
@@ -30,7 +30,6 @@ const ProductComp = (props) => {
         <td>{props.data.quantity}</td>
         <td>
           {/* generate every purchases of each product */}
-
           {storeData.purchases
             .filter((x) => x.ProductID === props.data.id)
             .map((x) => {
@@ -44,8 +43,7 @@ const ProductComp = (props) => {
                   <input
                     type="button"
                     value="Add"
-                    onClick={() => setIsVisible(true)}
-                  />
+                    onClick={() => setIsVisible(true)}/>
                   <BuyProductCopm data={x.customerID} isVisible={isVisible} />
                 </div>
               );
